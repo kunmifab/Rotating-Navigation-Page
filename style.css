@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(59, 58, 58);
+}
+
+.container {
+    padding: 50px;
+    background-color: whitesmoke;
+    color: rgb(9, 43, 11);
+    width: 100vw;
+    min-height: 100vh;
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+}
+
+.container.show-nav {
+    transform: rotate(-20deg);
+}
+
+.top-circle-container {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+
+.circle {
+    background-color: tomato;
+    height: 200px;
+    width: 200px; 
+    border-radius: 50%;
+    position: relative;
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+}
+
+.circle button{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100px;
+    background: transparent;
+    font-size: 24px;
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+
+.circle button:active{
+    transform: scale(.90);
+}
+
+
+.circle button:focus {
+    outline: none;
+}
+
+.circle button#open {
+    left: 60%;
+
+}
+
+.circle button#close {
+    top: 60%;
+    left: 50%;
+    transform-origin: top left;
+    display: none;
+    font-size: 28px;
+}
+
+.content img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.content {
+    margin: 50px auto;
+    max-width: 1000px;
+    line-height: 1.5rem;
+}
+
+.content h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.container.show-nav + nav li  {
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+nav {
+    position: fixed;
+    bottom: 10%;
+    left: 2%;
+    z-index: 100;
+    
+}
+
+nav ul {
+    line-height: 1.5rem;
+    list-style-type: none;
+    color: white;
+}
+
+nav ul li {
+    margin: 1.5rem 0;
+    text-transform: uppercase;
+    transform: translateX(-150%);
+    transition: transform 0.5s ease-in;
+}
+
+nav ul li i {
+    font-size: 28px;
+    margin-right: 1rem;
+}
+
+nav ul li + li  {
+    margin-left: 1rem;
+    transform: translateX(-200%);
+}
+
+nav ul li + li + li {
+    margin-left: 2rem;
+    transform: translateX(-250%);
+}
+
+nav ul li + li + li + li {
+    margin-left: 4.6rem;
+    transform: translateX(-300%);
+}
